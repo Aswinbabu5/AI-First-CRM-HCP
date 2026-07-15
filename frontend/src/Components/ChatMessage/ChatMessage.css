@@ -1,0 +1,38 @@
+.chat_message {
+  display: flex;
+  margin-bottom: 14px;
+}
+
+
+.chat_message.user {
+  justify-content: flex-end;
+}
+
+
+.chat_message.assistant {
+  justify-content: flex-start;
+}
+
+
+.message_bubble {
+  max-width: 75%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+
+.chat_message.user .message_bubble {
+  background: #2563eb;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+
+.chat_message.assistant .message_bubble {
+  background: white;
+  color: #1f2937;
+  border: 1px solid #e5e7eb;
+  border-bottom-left-radius: 4px;
+}

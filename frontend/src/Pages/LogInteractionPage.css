@@ -1,0 +1,42 @@
+.two_box {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 30px;
+  box-sizing: border-box;
+  align-items: stretch;
+}
+
+.right_box {
+  display: flex;
+  align-items: flex-start;
+}
+
+.left_box,
+.right_box {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+}
+
+.left_box > *,
+.right_box > * {
+  width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .two_box {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .two_box {
+    gap: 16px;
+    padding: 12px;
+  }
+}
