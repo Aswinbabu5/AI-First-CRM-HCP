@@ -76,7 +76,10 @@ const ChatForm = () => {
       );
 
       if (
-        responseData.tool_used === "log_interaction" &&
+        (
+          responseData.tool_used === "log_interaction" ||
+          responseData.tool_used === "edit_interaction"
+        ) &&
         responseData.data &&
         responseData.data.success
       ) {
