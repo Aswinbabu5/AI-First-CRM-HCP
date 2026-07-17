@@ -1,5 +1,6 @@
 backend/.env
 backend/env/
+frontend/.env.production
 frontend/node_modules/
 frontend/dist/
 __pycache__/
