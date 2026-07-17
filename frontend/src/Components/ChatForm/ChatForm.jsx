@@ -22,6 +22,28 @@ const ChatForm = () => {
     (state) => state.interaction.messages
   );
 
+  const convertTo24Hour = (time) => {
+    if (!time) return "";
+
+    const [clock, modifier] = time.split(" ");
+
+    if (!modifier) {
+      return time;
+    }
+
+    let [hours, minutes] = clock.split(":");
+
+    if (hours === "12") {
+      hours = "00";
+    }
+
+    if (modifier.toUpperCase() === "PM") {
+      hours = String(parseInt(hours, 10) + 12);
+    }
+
+    return `${hours.padStart(2, "0")}:${minutes}`;
+  };
+
   const handleSend = async () => {
     const message = input.trim();
 
@@ -66,7 +88,9 @@ const ChatForm = () => {
             interaction_date:
               responseData.data.interaction_date ?? "",
             interaction_time:
-              responseData.data.interaction_time ?? "",
+              convertTo24Hour(
+                responseData.data.interaction_time ?? ""
+              ),
             attendees:
               responseData.data.attendees ?? "",
             topics_discussed:

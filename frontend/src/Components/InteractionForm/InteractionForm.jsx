@@ -67,16 +67,17 @@ const InteractionForm = () => {
         <h5>Interaction</h5>
         <select
           name="interaction_type"
-          value={form.interaction_type}
+          value={form.interaction_type || ""}
           onChange={handleChange}
           className='customcolor'
           required
         >
           <option value="">Select Type</option>
-          <option value="Meeting">Meeting</option>
-          <option value="Call">Call</option>
+          <option value="In-Person Visit">In-Person Visit</option>
+          <option value="Phone Call">Phone Call</option>
           <option value="Email">Email</option>
           <option value="Conference">Conference</option>
+          <option value="Virtual Meeting">Virtual Meeting</option>
         </select>
 
         <h5>Date</h5>
@@ -92,7 +93,7 @@ const InteractionForm = () => {
         <input
           type='time'
           name="interaction_time"
-          value={form.interaction_time}
+          value={form.interaction_time || ""}
           onChange={handleChange}
         />
 
