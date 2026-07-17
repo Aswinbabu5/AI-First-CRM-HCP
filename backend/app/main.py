@@ -13,8 +13,8 @@ app = FastAPI(
 
 origins = [
     "http://localhost:5173",
-    "http://127.0.0.1:5173"
-    "https://ai-first-crm-hcp-nlb1.vercel.app"
+    "http://127.0.0.1:5173",
+    "https://ai-first-crm-hcp-mauve.vercel.app"
 ]
 
 app.add_middleware(
